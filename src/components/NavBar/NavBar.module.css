@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    background-color: #d9d9d9;
+  }
+  
+  .list {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    font-weight: bold;
+  }
+  
+  .list a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .list a:hover,
+  .list a:active {
+    color: black;
+    text-decoration: underline;
+  }
+  
