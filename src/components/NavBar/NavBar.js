@@ -15,6 +15,9 @@ function NavBar() {
           <li>
             <Link to="/signup">SignUp</Link>
           </li>  
+          <li>
+            <Link to="/customer-dashboard">My Dashboard</Link>
+          </li> 
         </ul>
       </nav>
     </header>

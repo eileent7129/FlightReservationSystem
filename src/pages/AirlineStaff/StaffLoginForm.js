@@ -1,30 +1,16 @@
 import {useState} from "react";
 import axios from 'axios';
+import validation from "../SignUpValidation";
+import {useNavigate} from "react-router-dom";
 
 
-function LoginForm(props) {
+function StaffLoginForm(props) {
 
     const [enteredEmail, setEnteredEmail] = useState("");
     const [enteredPassword, setEnteredPassword] = useState("");
 
-    const [loginStatus, setLoginStatus] = useState("");
-
-    const login = () => {
-        axios.post("http://localhost:3001/login", {
-          email: enteredEmail, 
-          password: enteredPassword
-    
-        }).then((response) => {
-
-            if(response.data.message){
-                setLoginStatus(response.data.message);
-            }
-            else {
-                setLoginStatus(response.data[0].email);
-            }
-            console.log(response.data);
-        });
-    };
+    const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
     
     const emailChangeHandler = (event) => {
         setEnteredEmail(event.target.value);
@@ -44,12 +30,29 @@ function LoginForm(props) {
 
         console.log(loginData);
 
+        setErrors(validation(loginData));
+
+        if(errors.email === "" && errors.password === ""){
+            axios.post("http//localhost:3000/login", loginData)
+            .then(res => {
+                if(res.data === "Success"){
+                    navigate("/customer-dashboard");
+                  }
+                  else {
+                    alert("No record existed");
+                  }
+        })
+        .catch(err => console.log(err));
+    }
+
+    console.log(loginData);
+
     };
 
 
     return (
         // form for login
-        <form class="login">
+        <form method="POST" action="" onSubmit={submitHandler}>
         <div className="form">
         <div className="label">
             <label>Email:</label>
@@ -70,9 +73,8 @@ function LoginForm(props) {
             />
         </div>
         <div className="submitButton">
-            <button onClick={login} type="submit">Login</button>
+            <button type="submit">Login</button>
         </div>
-        <h1>{loginStatus}</h1>
         </div>
         
     </form>
@@ -81,4 +83,4 @@ function LoginForm(props) {
     );
 }
 
-export default LoginForm;
+export default StaffLoginForm;

@@ -1,0 +1,30 @@
+
+.customer_tools{
+    display: flex;
+    column-gap: 10rem;
+}
+
+.sidebar {
+    background-color: #E3E1E1;
+    padding: 1rem;
+}
+
+.my-display {
+    display: flex;
+    background-color: #E3E1E1;
+    padding: 1rem;
+    width: 50rem;
+}
+
+.my-flights {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.flight-ctn {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 1rem;
+}
