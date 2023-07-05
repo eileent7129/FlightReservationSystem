@@ -18,6 +18,9 @@ function NavBar() {
           <li>
             <Link to="/customer-dashboard">My Dashboard</Link>
           </li> 
+          <li>
+            <Link to="/staff-dashboard">Staff Dashboard</Link>
+          </li> 
         </ul>
       </nav>
     </header>

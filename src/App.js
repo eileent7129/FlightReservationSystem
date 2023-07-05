@@ -7,6 +7,7 @@ import CustomerSignUp from "./pages/Customer/CustomerSignUp";
 import CustomerDashboard from "./pages/Customer/CustomerDashboard";
 import StaffLogin from "./pages/AirlineStaff/StaffLogin";
 import StaffSignUp from "./pages/AirlineStaff/StaffSignUp";
+import StaffDashboard from "./pages/AirlineStaff/StaffDashboard";
 import RootLayout from "./pages/Root";
 
 const router = createBrowserRouter([
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: "/customer-dashboard", element: <CustomerDashboard /> },
       { path: "/staff-login", element: <StaffLogin /> },
       { path: "/staff-signup", element: <StaffSignUp /> },
+      { path: "/staff-dashboard", element: <StaffDashboard /> }
     ]
   }
 ]);

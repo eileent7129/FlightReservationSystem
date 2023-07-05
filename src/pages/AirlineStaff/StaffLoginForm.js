@@ -36,7 +36,7 @@ function StaffLoginForm(props) {
             axios.post("http//localhost:3000/login", loginData)
             .then(res => {
                 if(res.data === "Success"){
-                    navigate("/customer-dashboard");
+                    navigate("/staff-dashboard");
                   }
                   else {
                     alert("No record existed");

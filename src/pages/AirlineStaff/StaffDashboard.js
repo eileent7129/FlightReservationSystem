@@ -1,9 +1,9 @@
-import "./CustomerDashboard.css";
+// import "./StaffDashboard.css";
 
-function CustomerDashboard() {
+function StaffDashboard() {
   return (
     <div>
-      <h1>Customer Dashboard, Hello Name!</h1>
+      <h1>Staff Dashboard!</h1>
       <div className="customer-tools">
       <div className="sidebar">
         <h3>My Flights</h3>
@@ -53,4 +53,4 @@ function CustomerDashboard() {
   );
 }
 
-export default CustomerDashboard;
+export default StaffDashboard;
