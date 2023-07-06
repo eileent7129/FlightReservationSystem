@@ -57,7 +57,7 @@ function CustomerSignUpForm(props) {
       name: enteredName,
       email: enteredEmail,
       password: enteredPassword,
-      phone: enteredPhone,
+      phone_number: enteredPhone,
       passport_number: enteredPassNum,
       passport_exp_date: enteredPassExp,
       passport_country: enteredPassCountry,
@@ -67,7 +67,7 @@ function CustomerSignUpForm(props) {
     setErrors(validation(loginData));
 
     if(errors.name === "" && errors.email === "" && errors.password === ""){
-      axios.post("http//localhost:3000/signup", loginData)
+      axios.post("http//localhost:3000/customer-signup", loginData)
       .then(res => {
         navigate("/");
         console.log(res.data);

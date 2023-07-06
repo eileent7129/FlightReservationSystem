@@ -6,9 +6,10 @@ function StaffDashboard() {
       <h1>Staff Dashboard!</h1>
       <div className="customer-tools">
       <div className="sidebar">
-        <h3>My Flights</h3>
-        <h3>Flight History</h3>
-        <h3>Track My Spending</h3>
+        <h3>View Flights</h3>
+        <h3>Add Flight</h3>
+        <h3>Add Airplane</h3>
+        <h3>Add Airport</h3>
       </div>
       <div className="my-display">
         <div class="my-flights">

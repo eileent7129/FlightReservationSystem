@@ -1,24 +1,29 @@
+import express, { json } from "express";
+import { createConnection } from "mysql";
+import cors from "cors";
+
 const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
-app.use(express.json())
+app.use(json())
 
-const db = mysql.createConnection({
+const db = createConnection({
     host: "localhost",
     user: "root",
     password: "//Eat@2023",
     database: "flight_database",
 })
 
-app.post("/signup", (req, res) =>{
-    const sql = "INSET INTO customer (`name`, `email`, `password`, `passport_number`,`passport_exp_date`, `passport_country`, `date_of_birth`) VALUES (?)";
+app.post("/customer-signup", (req, res) =>{
+    const sql = "INSERT INTO customer (`name`, `email`, `password`, `phone_number`, `passport_number`,`passport_exp_date`, `passport_country`, `date_of_birth`) VALUES (?)";
     const values = [
         req.body.name,
         req.body.email,
         req.body.password,
+        req.body.phone_number,
         req.body.passport_number,
         req.body.passport_exp_date,
         req.body.passport_country,
